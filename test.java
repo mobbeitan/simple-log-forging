@@ -13,6 +13,6 @@ public class VulnerableLogExample extends HttpServlet {
         String userMessage = request.getParameter("message");
 
         // Logging the user input directly - vulnerable to log forging
-        logger.warning("User message: " + userMessage);
+        logger.warning("User message: " + String.valueOf(userMessage).replace("\n", "").replace("\r", ""));
     }
 }
